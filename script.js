@@ -63,7 +63,7 @@ const errorMessages = {
   userFirstName: "Enter a valid FirstName (2-4 characters).",
   userLastName: "Enter a valid LastName ( 2-4 characters).",
   userEmail: "Enter a valid email address.",
-  userPhone: "Enter a valid 10-digit phone number starting with 6, 7, 8, or 9.",
+  userPhone: "Enter a valid 10 digit number starting with 6, 7, 8, or 9.",
   userPassword: "Enter a strong password.",
   userConfirmPassword: "Passwords do not match.",
   userAddress: "Enter the Address(10 - 12characters). ",
