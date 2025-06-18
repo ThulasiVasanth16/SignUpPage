@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Sign Up Page</title>
+  </head>
+  <body class="bg-[#f3f2f0] flex items-center justify-center font-[Mulish]">
+    <section class="w-[60%] max-w-[1000px]">
+      <h1 class="text-center text-2xl font-bold text-[#e6a35c] mb-2 mt-4">
+        SIGN UP
+      </h1>
+      <form
+        class="px-16 py-8 mb-4 rounded-2xl shadow-[0_0_15px_10px_#e9e7e6] bg-white grid grid-cols-1 md:grid-cols-2 gap-4"
+      >
+        <!-- First Name -->
+        <div class="relative">
+          <label
+            for="first_name"
+            class="absolute left-[-5px] -top-[6.5px] bg-white px-[4px] mx-3 block text-xs font-bold text-black"
+          >
+            First Name <span class="text-red-600">*</span>
+          </label>
+          <input
+            type="text"
+            id="first_name"
+            class="mt-1 block w-full h-10 border border-gray-300 rounded-md px-3 focus:outline-none focus:border-[#e6a35c] focus:ring-1 focus:ring-[#e6a35c]"
+          />
+          <span
+            id="userFirstNameError"
+            class="error block mt-1 text-[#ff0000] text-[10px]"
+            >&nbsp;</span
+          >
+        </div>
+
+        <!-- Last Name -->
+        <div class="relative">
+          <label
+            for="last_name"
+            class="absolute left-[-8px] -top-[6.5px] bg-white px-[4px] mx-3 block text-xs font-bold text-black"
+          >
+            Last Name <span class="text-red-600">*</span>
+          </label>
+          <input
+            type="text"
+            id="last_name"
+            class="mt-1 block w-full h-10 border border-gray-300 rounded-md px-3 focus:outline-none focus:border-[#e6a35c] focus:ring-1 focus:ring-[#e6a35c]"
+          />
+          <span
+            id="userLastNameError"
+            class="error text-[#ff0000] text-[10px] block mt-1"
+            >&nbsp;</span
+          >
+        </div>
+
+        <!-- Email -->
+        <div class="relative">
+          <label
+            for="email"
+            class="absolute left-[-5px] -top-[6.5px] bg-white px-[4px] mx-3 block text-xs font-bold text-black"
+          >
+            Email <span class="text-red-600">*</span>
+          </label>
+          <input
+            type="email"
+            id="email"
+            class="mt-1 block w-full h-10 border border-gray-300 rounded-md px-3 focus:outline-none focus:border-[#e6a35c] focus:ring-1 focus:ring-[#e6a35c]"
+          />
+          <span
+            id="userEmailError"
+            class="error text-[#ff0000] text-[10px] block mt-1"
+            >&nbsp;</span
+          >
+        </div>
+
+        <!-- Phone Number -->
+        <div class="relative">
+          <label
+            for="phone"
+            class="absolute left-[-5px] -top-[6.5px] bg-white px-[4px] mx-3 block text-xs font-bold text-black"
+          >
+            Phone Number <span class="text-red-600">*</span>
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            class="mt-1 block w-full h-10 border border-gray-300 rounded-md px-3 focus:outline-none focus:border-[#e6a35c] focus:ring-1 focus:ring-[#e6a35c]"
+            onkeydown="avoidKey(event,10, true)"
+          />
+          <span
+            id="userPhoneError"
+            class="error text-[#ff0000] text-[10px] block mt-1"
+            >&nbsp;</span
+          >
+        </div>
+
+        <!-- Password -->
+        <div class="relative">
+          <label
+            for="password"
+            class="absolute left-[-5px] -top-[6.5px] bg-white px-[4px] mx-3 block text-xs font-bold text-black"
+          >
+            Password <span class="text-red-600">*</span>
+          </label>
+          <input
+            type="password"
+            id="password"
+            class="mt-1 block w-full h-10 border border-gray-300 rounded-md px-3 focus:outline-none focus:border-[#e6a35c] focus:ring-1 focus:ring-[#e6a35c]"
+            onkeydown="avoidKey(event,8)"
+          />
+          <i
+            id="togglePassword"
+            class="far fa-eye-slash cursor-pointer absolute right-3 top-4"
+          ></i>
+          <span
+            id="userPasswordError"
+            class="error text-[#ff0000] text-[10px] block mt-1"
+            >&nbsp;</span
+          >
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="relative">
+          <label
+            for="confirm_password"
+            class="absolute left-[-5px] -top-[6.5px] bg-white px-[4px] mx-3 block text-xs font-bold text-black"
+          >
+            Confirm Password <span class="text-red-600">*</span>
+          </label>
+          <input
+            type="password"
+            id="confirm_password"
+            class="mt-1 block w-full h-10 border border-gray-300 rounded-md px-3 focus:outline-none focus:border-[#e6a35c] focus:ring-1 focus:ring-[#e6a35c]"
+            onkeydown="avoidKey(event,8)"
+          />
+          <i
+            id="toggleConfirmPassword"
+            class="far fa-eye-slash cursor-pointer absolute right-3 top-4"
+          ></i>
+
+          <span
+            id="userConfirmPasswordError"
+            class="error text-[#ff0000] text-[10px] block mt-1"
+            >&nbsp;</span
+          >
+        </div>
+
+        <!-- Address -->
+        <div class="relative">
+          <label
+            for="address"
+            class="absolute left-[-5px] -top-[6.5px] bg-white px-[4px] mx-3 block text-xs font-bold text-black"
+          >
+            Address <span class="text-red-600">*</span>
+          </label>
+          <input
+            type="text"
+            id="address"
+            class="mt-1 block w-full h-10 border border-gray-300 rounded-md px-3 focus:outline-none focus:border-[#e6a35c] focus:ring-1 focus:ring-[#e6a35c]"
+          />
+          <span
+            id="userAddressError"
+            class="error text-[#ff0000] text-[10px] block mt-1"
+            >&nbsp;</span
+          >
+        </div>
+
+        <!-- Country -->
+        <div class="relative">
+          <label
+            for="country"
+            class="absolute left-[-5px] -top-[6.5px] bg-white px-[4px] mx-3 block text-xs font-bold text-black"
+          >
+            Country <span class="text-red-600">*</span>
+          </label>
+          <input
+            type="text"
+            id="country"
+            class="mt-1 block w-full h-10 border border-gray-300 rounded-md px-3 focus:outline-none focus:border-[#e6a35c] focus:ring-1 focus:ring-[#e6a35c]"
+          />
+          <span
+            id="userCountryError"
+            class="error text-[#ff0000] text-[10px] block mt-1"
+            >&nbsp;</span
+          >
+        </div>
+
+        <!-- State -->
+        <div class="relative">
+          <label
+            for="state"
+            class="absolute left-[-5px] -top-[6.5px] bg-white px-[4px] mx-3 block text-xs font-bold text-black"
+          >
+            State <span class="text-red-600">*</span>
+          </label>
+          <input
+            type="text"
+            id="state"
+            class="mt-1 block w-full h-10 border border-gray-300 rounded-md px-3 focus:outline-none focus:border-[#e6a35c] focus:ring-1 focus:ring-[#e6a35c]"
+          />
+          <span
+            id="userStateError"
+            class="error text-[#ff0000] text-[10px] block mt-1"
+            >&nbsp;</span
+          >
+        </div>
+
+        <!-- City -->
+        <div class="relative">
+          <label
+            for="city"
+            class="absolute left-[-5px] -top-[6.5px] bg-white px-[4px] mx-3 block text-xs font-bold text-black"
+          >
+            City <span class="text-red-600">*</span>
+          </label>
+          <input
+            type="text"
+            id="city"
+            class="mt-1 block w-full h-10 border border-gray-300 rounded-md px-3 focus:outline-none focus:border-[#e6a35c] focus:ring-1 focus:ring-[#e6a35c]"
+          />
+          <span
+            id="userCityError"
+            class="error text-[#ff0000] text-[10px] block mt-1"
+            >&nbsp;</span
+          >
+        </div>
+
+        <!-- Zip Code (Full Width in Small Screens) -->
+        <div class="md:col-span-2 relative">
+          <label
+            for="zip"
+            class="absolute left-[-5px] -top-[6.5px] bg-white px-[4px] mx-3 block text-xs font-bold text-black"
+          >
+            Zip Code <span class="text-red-600">*</span>
+          </label>
+          <input
+            type="text"
+            id="zip"
+            class="mt-1 block w-full h-10 border border-gray-300 rounded-md px-3 md:w-[30%] focus:outline-none focus:border-[#e6a35c] focus:ring-1 focus:ring-[#e6a35c]"
+            onkeydown="avoidKey(event,6, true)"
+          />
+          <span id="userZipError" class="error text-[#ff0000] text-[10px] block"
+            >&nbsp;</span
+          >
+        </div>
+
+        <!-- Submit Button -->
+        <div class="md:col-span-2 flex justify-center">
+          <button
+            type="button"
+            class="bg-[#e6a35c] text-white w-[200px] h-[30px] font-medium text-base rounded-md hover:bg-orange-400"
+            id="sign_up_button"
+          >
+            Sign Up
+          </button>
+        </div>
+      </form>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
