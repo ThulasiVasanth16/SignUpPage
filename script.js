@@ -140,7 +140,7 @@ const handleRegister = () => {
       userInputData,
     ])
   );
-  alert("Registration successful!");
+  alert("Thank you for signing up!");
 
   // after successfully submitted the form that input will clear
   clearForm();  
