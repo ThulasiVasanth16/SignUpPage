@@ -140,7 +140,16 @@ const handleRegister = () => {
       userInputData,
     ])
   );
-  alert("Thank you for signing up!");
+  
+  const toast = document.getElementById("toastMsg");
+  toast.classList.remove("hidden");
+  toast.classList.add("flex");
+
+  setTimeout(() => {
+    toast.classList.add("hidden");
+    toast.classList.remove("flex");
+  }, 3000);
+
 
   // after successfully submitted the form that input will clear
   clearForm();  
