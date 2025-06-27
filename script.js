@@ -79,7 +79,7 @@ const validationRules = {
   userPhone: /^[6-9]\d{9}$/, // phone Number exactly 10 digits
   userEmail: /^\w+@\w+\.\w{2,}$/, //[A-Za-z0-9_] w means metaCharacter
   userZip: /^\d{6}$/,
-  userPassword: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,8}$/, // one Capital letter or small letter and one number  6 to 8 range
+  userPassword: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,8}$/, // one Capital letter or small letter and one number  6 to 8 range
 };
 
 //Alert Messages
